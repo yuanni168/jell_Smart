@@ -1,15 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
-
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
 
     defaultConfig {
-        minSdkVersion rootProject.ext.android["minSdkVersion"]
-        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
-        versionName rootProject.ext.android["versionName"]
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -26,18 +25,18 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api rootProject.ext.dependencies["appcompat-v7"]
-    api rootProject.ext.dependencies["design"]
-    api rootProject.ext.dependencies["support-v4"]
-    api rootProject.ext.dependencies["recyclerview-v7"]
-    api rootProject.ext.dependencies["design_constraint"]
+//  /*  api rootProject.ext.dependencies["appcompat-v7"]
+//    api rootProject.ext.dependencies["design"]
+//    api rootProject.ext.dependencies["support-v4"]
+//    api rootProject.ext.dependencies["recyclerview-v7"]
+//    api rootProject.ext.dependencies["design_constraint"]*/
 
-    implementation "android.arch.lifecycle:extensions:1.1.0"
-    // alternatively, just ViewModel
-    implementation "android.arch.lifecycle:viewmodel:1.1.0"
-    // alternatively, just LiveData
-    implementation "android.arch.lifecycle:livedata:1.1.0"
+    implementation deps.support.app_compat
+    implementation deps.support.v4
+    implementation deps.support.design
+    implementation deps.support.cardview
 
-    annotationProcessor "android.arch.lifecycle:compiler:1.1.0"
-
+    testImplementation 'junit:junit:4.12'
+    
+    
 }

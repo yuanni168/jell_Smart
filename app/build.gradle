@@ -1,27 +1,69 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
 
     defaultConfig {
         applicationId "com.jia.jelly.smart"
-        minSdkVersion rootProject.ext.android["minSdkVersion"]
-        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
-        versionName rootProject.ext.android["versionName"]
-        testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
+    productFlavors {
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Support libraries
+    implementation deps.support.app_compat
+    implementation deps.support.v4
+    implementation deps.support.design
+    implementation deps.support.cardview
 
+    // Architecture components
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.extensions
+    annotationProcessor deps.lifecycle.compiler
+    implementation deps.room.runtime
+    annotationProcessor deps.room.compiler
+
+    // Android Testing Support Library's runner and rules
+    androidTestImplementation deps.atsl.runner
+    androidTestImplementation deps.atsl.rules
+    androidTestImplementation deps.room.testing
+    androidTestImplementation deps.arch_core.testing
+
+    // Espresso UI Testing
+    androidTestImplementation deps.espresso.core
+    androidTestImplementation deps.espresso.contrib
+    androidTestImplementation deps.espresso.intents
+
+    // Resolve conflicts between main and test APK:
+    androidTestImplementation deps.support.annotations
+    androidTestImplementation deps.support.v4
+    androidTestImplementation deps.support.app_compat
+    androidTestImplementation deps.support.design
     implementation project(":jellyCore")
 }
