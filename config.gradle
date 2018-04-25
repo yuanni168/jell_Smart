@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-
-
 /**
  * Shared file between builds so that they can all use the same dependencies and
  * maven repositories.
@@ -140,4 +138,5 @@ def addRepos(RepositoryHandler handler) {
     handler.jcenter()
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
+
 ext.addRepos = this.&addRepos
