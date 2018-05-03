@@ -49,21 +49,14 @@ dependencies {
     implementation deps.room.runtime
     annotationProcessor deps.room.compiler
 
-    // Android Testing Support Library's runner and rules
-    androidTestImplementation deps.atsl.runner
-    androidTestImplementation deps.atsl.rules
-    androidTestImplementation deps.room.testing
-    androidTestImplementation deps.arch_core.testing
 
-    // Espresso UI Testing
-    androidTestImplementation deps.espresso.core
-    androidTestImplementation deps.espresso.contrib
-    androidTestImplementation deps.espresso.intents
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    annotationProcessor deps.dagger.compiler
+    annotationProcessor deps.dagger.android_support_compiler
 
-    // Resolve conflicts between main and test APK:
-    androidTestImplementation deps.support.annotations
-    androidTestImplementation deps.support.v4
-    androidTestImplementation deps.support.app_compat
-    androidTestImplementation deps.support.design
+    
+    implementation deps.okgo.core
     implementation project(":jellyCore")
 }

@@ -6,6 +6,9 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.support.annotation.NonNull;
 
+import com.jia.jelly.smart.model.Product;
+import com.jia.jelly.smart.model.Resource;
+
 import java.util.List;
 
 public class NameViewModel extends AndroidViewModel {
@@ -19,7 +22,7 @@ public class NameViewModel extends AndroidViewModel {
         mUserRepository = new UserRepository();
     }
 
-    public MutableLiveData<String> getCurrentName() {
+    public LiveData<Resource<String>> getCurrentName() {
         return mUserRepository.getCurrentName();
     }
 

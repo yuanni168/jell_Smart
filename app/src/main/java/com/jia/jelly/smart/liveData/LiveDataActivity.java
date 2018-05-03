@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.jia.jelly.smart.R;
+import com.jia.jelly.smart.model.Resource;
 
 import java.util.List;
 
@@ -31,10 +32,10 @@ public class LiveDataActivity extends AppCompatActivity {
     private void initView() {
         nameTv = findViewById(R.id.name_tv);
         nameViewModel = ViewModelProviders.of(this).get(NameViewModel.class);
-        nameViewModel.getCurrentName().observe(this, new Observer<String>() {
+        nameViewModel.getCurrentName().observe(this, new Observer<Resource<String>>() {
             @Override
-            public void onChanged(@Nullable String s) {
-                nameTv.setText(s);
+            public void onChanged(@Nullable Resource<String> resource) {
+                nameTv.setText(resource.data);
             }
         });
         nameViewModel.getmNameListData().observe(this, new Observer<List<String>>() {
@@ -42,15 +43,9 @@ public class LiveDataActivity extends AppCompatActivity {
             public void onChanged(@Nullable List<String> strings) {
                 for (String item : strings) {
                     Log.d("TAG", "name: " + item);
+
                 }
             }
         });
-        nameTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nameViewModel.getCurrentName().setValue("ddddddddddddddddddddddddddddd");
-            }
-        });
-
     }
 }
