@@ -1,0 +1,10 @@
+package com.jia.jelly.jellycore.view.dialog;
+
+/**
+ * Created by FengTing on 2017/5/8.
+ * https://www.github.com/limxing
+ */
+
+public interface PromptButtonListener {
+    void onClick(PromptButton button);
+}
