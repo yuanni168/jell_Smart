@@ -18,7 +18,7 @@
  * Create by Allen
  */
 
-package com.jia.jelly.jellycore.utils;
+package com.jia.jelly.jellycore.utils.base_utils;
 
 import android.text.TextUtils;
 import android.util.Log;

@@ -25,17 +25,20 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-//  /*  api rootProject.ext.dependencies["appcompat-v7"]
-//    api rootProject.ext.dependencies["design"]
-//    api rootProject.ext.dependencies["support-v4"]
-//    api rootProject.ext.dependencies["recyclerview-v7"]
-//    api rootProject.ext.dependencies["design_constraint"]*/
 
     implementation deps.support.app_compat
     implementation deps.support.v4
     implementation deps.support.design
     implementation deps.support.cardview
+    implementation deps.glide.core
+    //annotationProcessor deps.glide.compiler
 
+
+    implementation deps.okgo.core
+
+    implementation deps.json
+    debugImplementation deps.chuck_debug
+    releaseImplementation  deps.chuck_release
     testImplementation 'junit:junit:4.12'
     
     

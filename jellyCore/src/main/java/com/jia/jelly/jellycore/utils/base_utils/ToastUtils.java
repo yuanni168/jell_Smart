@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.jia.jelly.jellycore.utils;
+package com.jia.jelly.jellycore.utils.base_utils;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -241,7 +241,7 @@ public class ToastUtils {
      * @param duration 显示时长
      */
     private static void showToast(@StringRes int resId, int duration) {
-        showToast(Utils.getContext().getResources().getText(resId).toString(), duration);
+        showToast(ContextUtils.getContext().getResources().getText(resId).toString(), duration);
     }
 
     /**
@@ -252,7 +252,7 @@ public class ToastUtils {
      * @param args     参数
      */
     private static void showToast(@StringRes int resId, int duration, Object... args) {
-        showToast(String.format(Utils.getContext().getResources().getString(resId), args), duration);
+        showToast(String.format(ContextUtils.getContext().getResources().getString(resId), args), duration);
     }
 
     /**
@@ -275,7 +275,7 @@ public class ToastUtils {
     private static void showToast(CharSequence text, int duration) {
         if (isJumpWhenMore) cancelToast();
         if (sToast == null) {
-            sToast = Toast.makeText(Utils.getContext(), text, duration);
+            sToast = Toast.makeText(ContextUtils.getContext(), text, duration);
         } else {
             sToast.setText(text);
             sToast.setDuration(duration);

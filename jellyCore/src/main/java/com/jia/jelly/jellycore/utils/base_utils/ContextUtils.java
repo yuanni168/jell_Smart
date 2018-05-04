@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.jia.jelly.jellycore.utils;
+package com.jia.jelly.jellycore.utils.base_utils;
 
 import android.content.Context;
 
@@ -26,11 +26,11 @@ import android.content.Context;
  *     desc  : Utils初始化相关
  * </pre>
  */
-public class Utils {
+public class ContextUtils {
 
     private static Context context;
 
-    private Utils() {
+    private ContextUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
@@ -40,7 +40,7 @@ public class Utils {
      * @param context 上下文
      */
     public static void init(Context context) {
-        Utils.context = context.getApplicationContext();
+        ContextUtils.context = context.getApplicationContext();
     }
 
     /**

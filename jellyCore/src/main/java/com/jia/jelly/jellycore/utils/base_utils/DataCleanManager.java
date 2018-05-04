@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.jia.jelly.jellycore.utils;
+package com.jia.jelly.jellycore.utils.base_utils;
 /*  * 文 件 名:  DataCleanManager.java  * 描    述:  主要功能有清除内/外缓存，清除数据库，清除sharedPreference，清除files和清除自定义目录  */
 
 import android.content.Context;

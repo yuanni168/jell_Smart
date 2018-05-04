@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.jia.jelly.jellycore.utils;
+package com.jia.jelly.jellycore.utils.base_utils;
 
 import android.database.Cursor;
 import android.text.TextUtils;

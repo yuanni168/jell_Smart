@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.jia.jelly.jellycore.utils;
+package com.jia.jelly.jellycore.utils.base_utils;
 
 public class BtnClickUtils {
     private static long mLastClickTime = 0;

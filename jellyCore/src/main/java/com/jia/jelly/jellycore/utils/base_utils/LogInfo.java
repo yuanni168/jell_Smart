@@ -18,7 +18,7 @@
  * Create by Allen
  * 
  */
-package com.jia.jelly.jellycore.utils;
+package com.jia.jelly.jellycore.utils.base_utils;
 
 public class LogInfo {
 	private static final int LENGTH = 5;
