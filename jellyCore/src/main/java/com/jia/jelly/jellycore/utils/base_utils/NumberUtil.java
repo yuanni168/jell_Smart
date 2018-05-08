@@ -43,15 +43,14 @@ public class NumberUtil {
     }
 
     /**
-     * 四舍五入
      *
      * @param value 数值
      * @param digit 保留小数位
      * @return
      */
-    public static String getRoundUp(double value, int digit) {
+    public static String getRoundDown(double value, int digit) {
         BigDecimal result = new BigDecimal(value);
-        return result.setScale(digit, BigDecimal.ROUND_HALF_UP).toString();
+        return result.setScale(digit, BigDecimal.ROUND_DOWN).toString();
     }
     /**
      * 四舍五入

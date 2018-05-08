@@ -29,6 +29,8 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 
+import com.jia.jelly.jellycore.R;
+
 /**
  * Created by limxing on 16/1/7.
  * https://www.github.com/limxing
